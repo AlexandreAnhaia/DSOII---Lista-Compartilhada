@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:growl id="messages" showDetail="true"/>
+
+            <p:menuButton value="Usuario">
+                <p:menuitem value="Cadastrar" action="cadastraUsuario" update="messages" icon="pi pi-save"/>
+                <p:menuitem value="Atualizar" action="editaUsuario" update="messages" icon="pi pi-refresh"/>
+                <p:menuitem value="Delete" action="deletaUsuario" ajax="false" icon="pi pi-times"/>
+                <p:menuitem value="Listar" action="listaUsuarios" ajax="false" icon="pi pi-refresh"/>
+                <p:separator />
+                <p:menuitem value="Homepage" url="http://www.primefaces.org" icon="pi pi-home"/>
+            </p:menuButton>
+
+            <p:menuButton value="Lista">
+                <p:menuitem value="Cadastrar" action="cadastraLista" update="messages" icon="pi pi-save"/>
+                <p:menuitem value="Deletar" action="#{menuView.delete}" ajax="false" icon="pi pi-times"/>
+                <p:menuitem value="Listar" action="listaUsuarios" ajax="false" icon="pi pi-refresh"/>
+                <p:separator />
+                <p:menuitem value="Homepage" url="http://www.primefaces.org" icon="pi pi-home"/>
+            </p:menuButton>
+            
+            <p:menuButton value="Produto">
+                <p:menuitem value="Cadastrar" action="cadastraProduto" update="messages" icon="pi pi-save"/>
+                <p:menuitem value="Atualizar" action="editaProduto" update="messages" icon="pi pi-refresh"/>
+                <p:menuitem value="Deletar" action="deletaProduto" ajax="false" icon="pi pi-times"/>
+                <p:menuitem value="Listar" action="listaProdutos" ajax="false" icon="pi pi-refresh"/>
+                <p:separator />
+                <p:menuitem value="Homepage" url="http://www.primefaces.org" icon="pi pi-home"/>
+            </p:menuButton>
+            
+            <p:button value="Logout" outcome="index" />
+        </h:form>
+    </h:body>
+</html>
+

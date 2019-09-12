@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <!--        <h:form>
+                    <p:button outcome="listaUsuarios" value="Lista de Usuarios" icon="pi pi-star" style="margin-right:20px;">
+                    </p:button>
+                    <p:button outcome="listaUsuarios" value="Cadastrar Usuario" icon="pi pi-star" style="margin-right:20px;">
+                    </p:button>
+                    <p:button outcome="listaUsuarios" value="Listas" icon="pi pi-star" style="margin-right:20px;">
+                    </p:button>
+                </h:form>-->
+
+        <!--        <h:form>
+                    <p:tabMenu activeIndex="#{param.i}">
+                        <p:menuitem value="Lista de Usuarios" outcome="listaUsuarios" icon="pi pi-file">
+                        </p:menuitem>
+                        <p:menuitem value="Cadastrar Usuario" outcome="cadastraUsuario" icon="pi pi-file">
+                        </p:menuitem>
+                        <p:menuitem value="Listas" outcome="listaUsuarios" icon="pi pi-file">
+                        </p:menuitem>
+                        <p:menuitem value="Criar Nova Lista" outcome="listaUsuarios" icon="pi pi-file">
+                        </p:menuitem>
+                    </p:tabMenu>
+                </h:form>-->
+
+        <h:form>
+            <h:panelGrid columns="2" id="matchGrid" cellpadding="5">                   
+                <h:outputLabel for="pwd1" value="Codigo: " />
+                <p:password id="pwd1" value="#{usuarioMBean.codigo}" label="Password 1" required="true" />
+
+                <h:outputLabel for="pwd2" value="Senha: " />
+                <p:password id="pwd2" value="#{usuarioMBean.senha}" label="Password 2" required="true"  />
+            </h:panelGrid>
+            <p:commandButton update="matchGrid" value="Entrar" action="#{usuarioMBean.verificaUsuario()}"/>    
+        </h:form>
+        <h:form>
+            <p:commandButton value="Cadastrar Usuario" action="#{usuarioMBean.exibeTelaCadastro()}"/>
+        </h:form>
+
+    </h:body>
+</html>
+
